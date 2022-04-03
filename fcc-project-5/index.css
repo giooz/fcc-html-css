@@ -1,0 +1,260 @@
+/*GERAL*/
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+/*zerar as margins e borders do doc, alinhar texto no centro, definir fonte usada*/
+html,
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/*MOBILE FIRST*/
+
+/*HEADER*/
+/*definir cor e posição fixa no topo da tela do header*/
+header {
+  background: #299e52;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/*propriedades dos links dentro do header*/
+header a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 16px 30px;
+  transition: background-color ease 500ms;
+}
+
+/*cor do background dos links no hover*/
+header a:hover {
+  background-color: #272b3a2a;
+}
+
+/*menu com os links, distrubuido pelo header*/
+.header-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/*MAIN*/
+/*propriedades da welcome-section (tamanho, cores, etc)*/
+#welcome-section {
+  background-color: #222c37;
+  padding-top: 60px;
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+/*propriedades do link*/
+#welcome-section a {
+  text-decoration: none;
+  color: #26b587;
+  transition: letter-spacing 1s;
+}
+
+/*muda cor e espaçamento do link no hover*/
+#welcome-section a:hover {
+  letter-spacing: 1.2px;
+  color: #24a9a9;
+}
+
+/*propriedades da project-section (tamanho, cores, etc)*/
+#project-section {
+  background: #304552;
+  color: white;
+  padding-top: 60px;
+  padding-bottom: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/*margem do h2 da projects session*/
+#project-section h2 {
+  margin: 10%;
+}
+
+/*exibe as boxed em uma coluna no mobile*/
+.project-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80%;
+  gap: 35px;
+}
+
+/*junto com o before, mantém a proporção quadrada da box*/
+.project-box {
+  background-color: #222c376a;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.project-box::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+/*faz a imagem do hover ocupar 100% da div pai*/
+.project-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+  color: white;
+}
+
+/*dá zoom e desfoca a imagem no hover*/
+.project-box:hover .project-img {
+  transform: scale(1.1, 1.1);
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+/*texto que aparece no hover, inicialmente escondido*/
+.project-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.5;
+  color: white;
+  display: none;
+}
+
+.project-box:hover .project-text {
+  display: block;
+}
+
+/*proprieades do botão see 'em all*/
+#project-button {
+  cursor: pointer;
+  background: #222c37;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  padding: 15px 25px;
+  border: none;
+}
+
+#project-button:hover {
+  background: #299e52;
+  transition: 200ms;
+}
+
+/*FOOTER*/
+#footer {
+  background: #299e52;
+}
+
+/*ordena os itens do menu do footer em coluna*/
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/*espaçamento e cores dos itens do menu do footer*/
+footer li {
+  margin: 0;
+  padding: 15px;
+  color: white;
+  list-style-type: none;
+}
+
+/*tira decoração do link e define uma posição inicial pra que ele se desloque no hover*/
+footer a {
+  text-decoration: none;
+  position: relative;
+  top: 0;
+  transition: 500ms;
+}
+
+/*sobe os links no footer no hover*/
+footer a:hover {
+  position: relative;
+  top: -10px;
+}
+
+/*espaçamento e cor do h2 do footer*/
+footer h2 {
+  padding: 60px 15px;
+  margin: 0;
+  color: white;
+}
+
+/*PROPRIEDADES PARA TELAS MAIORES QUE 600PX*/
+@media (min-width: 600px) {
+  /*define uma largura máxima pro menu do header e o centraliza*/
+  .header-menu {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*muda o grid com os project-boxes pra 2 por linha*/
+  .project-container {
+    grid-template-columns: repeat(2, 45%);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /*margens do h2*/
+  #project-section h2 {
+    margin: 20px 5% 50px 5%;
+  }
+
+  /*remove a margin do botão que só é necessária no mobile*/
+  #project-button {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  /*muda a ordem dos links no footer pra fileira e define tamanho máximo*/
+  .footer-container {
+    flex-direction: row;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+  }
+
+  /*padding dos items do menu do footer*/
+  footer li {
+    padding: 30px;
+  }
+}
+
+/*media query pra diminuir o header menu em telas muito pequenas*/
+@media (max-width: 390px) {
+  header a {
+    font-size: 16px;
+    padding: 16px 15px;
+  }
+}
