@@ -1,97 +1,82 @@
 <html>
 
-  <div class="bg">
+<div class="bg">
 
-    <head>
-      <meta charset="utf-8">
-      <link rel="stylesheet" href="index.css">
-      <title>FreeCodeCamp | Project #2</title>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <title>FreeCodeCamp | Project #2</title>
+  </head>
 
-    <body>
-     <main id="main">
+  <body>
+    <main id="main">
       <div id="box-1">
-        
+
         <!--header-->
         <h1 id="title">My Very First Survey Form</h1>
         <p id="description">There is nothing in particular that I'd like to know, but this is my task!</p>
         <!--/header-->
-        
+
         <form id="survey-form">
-          
+
           <!--name-->
           <div class="form-field">
             <label id="name-label" for="name">First, let me know your full name:</label>
             <input type="text" required id="name" placeholder="Insert your full name here">
           </div>
           <!--/name-->
-          
+
           <!--email-->
           <div class="form-field">
             <label id="email-label" for="email">Now, I'd like to know your e-mail address:</label>
             <input type="email" required id="email" name="email" placeholder="Insert your e-mail address here">
           </div>
           <!--/email-->
-          
+
           <!--age-->
           <div class="form-field">
             <label id="number-label" for="number">My friends tell I should act my age. What's my age again?</label>
-            <input type="number" required id="number" name"age" min="12" max="120" placeholder="Tell me your age (min 12 - max 120)">
+            <input type="number" required id="number" name"age" min="12" max="120"
+              placeholder="Tell me your age (min 12 - max 120)">
           </div>
           <!--/age-->
-          
+
           <!--pet-yes-no-->
           <fieldset>
             <legend>Tell me, do you share your living space with any pet?</legend>
             <label for="yes">
-              <input id="yes" 
-                     value="yes" 
-                     type="radio" 
-                     name="yes-no">Yes
+              <input id="yes" value="yes" type="radio" name="yes-no">Yes
             </label>
             <label for="no">
-              <input id="no" 
-                     value="no" 
-                     type="radio" 
-                     name="yes-no">No
+              <input id="no" value="no" type="radio" name="yes-no">No
             </label>
-           </fieldset>
-            
+          </fieldset>
+
           <!--/pet-yes-no-->
-          
+
           <!--pet-type-->
           <fieldset>
             <legend>If you said yes, which pet is it?</legend>
             <div class="checkbox">
               <label for="bruce">
-                <input value="bruce" 
-                       type="checkbox" 
-                       name="pet">Almighty Bruce, King of Frogs and Salamenders
+                <input value="bruce" type="checkbox" name="pet">Almighty Bruce, King of Frogs and Salamenders
               </label><br>
               <label for="dog">
-                <input value="dog"
-                       type="checkbox" 
-                       name="pet">Dog
+                <input value="dog" type="checkbox" name="pet">Dog
               </label>
               <label for="cat">
-                <input value="cat" 
-                       type="checkbox" 
-                       name="pet">Cat
+                <input value="cat" type="checkbox" name="pet">Cat
               </label>
               <label for="others">
-                <input value="others" 
-                       type="checkbox" 
-                       name="pet">Others
+                <input value="others" type="checkbox" name="pet">Others
               </label>
               <label for="none">
-                <input value="none" 
-                       type="checkbox" 
-                       name="pet">None
+                <input value="none" type="checkbox" name="pet">None
               </label>
             </div>
           </fieldset>
           <!--/pet-type-->
-          
+
           <!--pokemon-->
           <div>
             <p>Choose a starter Pokemon:</p>
@@ -108,19 +93,21 @@
           <!--comment-->
           <div class="form-field">
             <p>Finally, do you have any additional comment to make?<span class="clue"> (optional)</span></p>
-            
+
             <input type="text" id="comment-box" placeholder="Insert your comment here. Be nice!">
           </div>
           <!--/comment-->
-          
+
           <button type="submit" id="submit">Submit my answers!</button>
 
         </form>
 
-      </div> <!--box-div-->
-    </body>
+      </div>
+      <!--box-div-->
+  </body>
 
-  </div> <!--bg-div-->
+</div>
+<!--bg-div-->
 </main>
 
 </html>
